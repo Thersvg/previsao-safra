@@ -3,14 +3,21 @@ package com.rodrigo.previsao_safra.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rodrigo.previsao_safra.dtos.produtor.AtualizarProdutorDTO;
+import com.rodrigo.previsao_safra.dtos.produtor.CriarProdutorDTO;
 import com.rodrigo.previsao_safra.model.Produtor;
 import com.rodrigo.previsao_safra.service.ProdutorService;
 
-import java.util.List;
-
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
 
 
 @RestController
@@ -23,15 +30,24 @@ public class ProdutorController {
         this.produtorService = produtorService;
     }
 
-    @GetMapping("/todos")
-    public List<Produtor> GetAll() {
-        return produtorService.listarTodos();
+    @PostMapping("/")
+    public Produtor criar (@Validated @RequestBody CriarProdutorDTO dto){
+        return produtorService.criar(dto);
     }
-    
-    @PostMapping("/criar")
-    public Produtor Create(@RequestBody Produtor produtor) {
-        return produtorService.salvar(produtor);
-    }
-    
 
+    @DeleteMapping("/{id}")
+    public void excluir (@PathVariable Long id){
+        produtorService.excluir(id);
+    }
+
+    @PutMapping("/{id}")
+    public Produtor atualizar(@PathVariable Long id, @RequestBody AtualizarProdutorDTO dto) {
+        return produtorService.atualizar(id, dto);
+    }
+
+    @GetMapping("/") // /produtor/?email=email@gmail.com
+    public Produtor buscaUsuarioPorEmail(@RequestParam String email) {
+        return produtorService.buscarPorEmail(email);
+    }
+    
 }

@@ -3,11 +3,13 @@ package com.rodrigo.previsao_safra.model;
 import java.time.Instant;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rodrigo.previsao_safra.model.vo.Documento;
 import com.rodrigo.previsao_safra.model.vo.Endereco;
 import com.rodrigo.previsao_safra.model.vo.Preferencias;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -32,8 +34,9 @@ public class Produtor {
 
     private String nome;
     private String email;
-    private String cpfCnpj;
     private String telefone;
+
+    @JsonIgnore
     private String senha;
 
     @Embedded
