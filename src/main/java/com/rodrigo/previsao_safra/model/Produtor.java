@@ -9,7 +9,6 @@ import com.rodrigo.previsao_safra.model.vo.Endereco;
 import com.rodrigo.previsao_safra.model.vo.Preferencias;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

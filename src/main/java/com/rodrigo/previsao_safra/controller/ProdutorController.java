@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.rodrigo.previsao_safra.dtos.produtor.AtualizarProdutorDTO;
 import com.rodrigo.previsao_safra.dtos.produtor.CriarProdutorDTO;
+//import com.rodrigo.previsao_safra.dtos.produtor.SigninDTO;
 import com.rodrigo.previsao_safra.model.Produtor;
 import com.rodrigo.previsao_safra.service.ProdutorService;
 
@@ -16,9 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-
-
 
 @RestController
 @RequestMapping("/produtor")
@@ -49,5 +47,10 @@ public class ProdutorController {
     public Produtor buscaUsuarioPorEmail(@RequestParam String email) {
         return produtorService.buscarPorEmail(email);
     }
+
+/*      @PostMapping("/signin")
+    public String signin(@RequestBody SigninDTO dto) {
+        return produtorService.signin(dto.getEmail(), dto.getSenha());
+    } */
     
 }

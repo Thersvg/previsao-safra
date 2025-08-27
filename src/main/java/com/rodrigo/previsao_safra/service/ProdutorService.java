@@ -1,23 +1,38 @@
 package com.rodrigo.previsao_safra.service;
 
-import java.util.List;
-
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.rodrigo.previsao_safra.dtos.produtor.AtualizarProdutorDTO;
-import com.rodrigo.previsao_safra.dtos.produtor.ConsultarProdutorDTO;
 import com.rodrigo.previsao_safra.dtos.produtor.CriarProdutorDTO;
 import com.rodrigo.previsao_safra.model.Produtor;
 import com.rodrigo.previsao_safra.repository.ProdutorRepository;
+//import com.rodrigo.previsao_safra.util.JwtUtil;
 
 @Service
 public class ProdutorService {
 
     private final ProdutorRepository produtorRepository;
+/*      private final PasswordEncoder passwordEncoder;
+    private final JwtUtil jwtUtil;  */
 
-    public ProdutorService (ProdutorRepository produtorRepository){
+     public ProdutorService (ProdutorRepository produtorRepository /* PasswordEncoder passwordEncoder, JwtUtil jwtUtil */){
         this.produtorRepository = produtorRepository;
+/*         this.passwordEncoder = passwordEncoder;
+        this.jwtUtil = jwtUtil; */
     }
+
+/*     public String signin(String email, String senha){
+        Produtor produtor = produtorRepository.findByEmail(email)
+        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+    
+        if(!passwordEncoder.matches(senha, produtor.getSenha())){
+            throw new RuntimeException("Senha incorreta");
+        }
+
+        return jwtUtil.generateToken(email);
+    
+    } */
 
     public Produtor criar (CriarProdutorDTO dto){
         
