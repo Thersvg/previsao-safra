@@ -32,6 +32,12 @@ build/
 ### VS Code ###
 .vscode/
 
-### Files ####
+# Environment variables
 .env
-tarefas.txt
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Arquivos de ambiente específicos (opcional)
+*.env
