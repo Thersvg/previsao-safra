@@ -32,4 +32,6 @@ public class Talhao {
 
     @OneToMany(mappedBy = "talhao", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Safra> safras;
+
+
 }

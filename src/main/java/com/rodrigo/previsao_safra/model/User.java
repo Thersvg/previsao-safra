@@ -1,31 +1,31 @@
 package com.rodrigo.previsao_safra.model;
 
 import java.time.Instant;
-import java.util.List;
+/*import java.util.List;*/
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.rodrigo.previsao_safra.model.vo.Documento;
+/*import com.rodrigo.previsao_safra.model.vo.Documento;
 import com.rodrigo.previsao_safra.model.vo.Endereco;
 import com.rodrigo.previsao_safra.model.vo.Preferencias;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Embedded;
+import jakarta.persistence.Embedded;*/
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+/*import jakarta.persistence.OneToMany;*/
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 @Entity
-@Table(name = "produtores")
+@Table(name = "users")
 @Getter
 @Setter
-public class Produtor {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,17 +38,17 @@ public class Produtor {
     @JsonIgnore
     private String senha;
 
-    @Embedded
+/*    @Embedded
     private Documento documento;
 
     @Embedded
     private Endereco endereco;
 
-    @OneToMany(mappedBy = "produtor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Fazenda> fazendas;
     
     @Embedded
-    private Preferencias preferencias;
+    private Preferencias preferencias;*/
 
     private Instant criadoEm;
     private Instant atualizadoEm;

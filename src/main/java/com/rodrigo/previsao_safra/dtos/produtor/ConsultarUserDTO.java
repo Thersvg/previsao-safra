@@ -5,9 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CriarProdutorDTO {
+public class ConsultarUserDTO {
+    private Long id;
     private String nome;
     private String email;
-    private String telefone;
-    private String senha;    
 }

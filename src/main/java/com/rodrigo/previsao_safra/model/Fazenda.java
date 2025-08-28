@@ -32,10 +32,12 @@ public class Fazenda {
     private Localizacao localizacao;
 
     @ManyToOne
-    @JoinColumn(name = "produtor_id")
-    private Produtor produtor;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @OneToMany(mappedBy = "fazenda", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Talhao> talhoes;
+
+
 
 }

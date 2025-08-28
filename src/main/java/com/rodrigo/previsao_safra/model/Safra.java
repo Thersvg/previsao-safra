@@ -20,13 +20,15 @@ public class Safra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "talhao_id")
+    private Talhao talhao;
+
     private String cultura;
     private String safra;
     private LocalDate dataPlantio;
     private LocalDate dataColheitaPrevista;
     private String status;
 
-    @ManyToOne
-    @JoinColumn(name = "talhao_id")
-    private Talhao talhao;
+
 }

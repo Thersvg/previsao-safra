@@ -12,7 +12,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AtualizarProdutorDTO {
+public class AtualizarUserDTO {
     private String nome;
     private String telefone;
     private String senha; 

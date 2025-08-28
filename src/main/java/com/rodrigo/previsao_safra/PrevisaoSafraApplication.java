@@ -9,5 +9,4 @@ public class PrevisaoSafraApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PrevisaoSafraApplication.class, args);
 	}
-
 }
