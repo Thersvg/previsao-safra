@@ -66,10 +66,6 @@ public class UserService {
         if(dto.getNome() != null) user.setNome(dto.getNome());
         if(dto.getTelefone() != null) user.setTelefone(dto.getTelefone());
         if(dto.getSenha() != null) user.setSenha(dto.getSenha());
-        if(dto.getDocumento() != null) user.setDocumento(dto.getDocumento());
-        if(dto.getEndereco() != null) user.setEndereco(dto.getEndereco());
-        if(dto.getFazendas() != null) user.setFazendas(dto.getFazendas());
-        if(dto.getPreferencias() != null) user.setPreferencias(dto.getPreferencias());
 
         return userRepository.save(user);
     }
